@@ -1,0 +1,12 @@
+version: '2'
+services:
+  db:
+    image: postgres:9.5
+    environment:
+      - POSTGRES_USER:janith
+      - POSTGRES_PASSWORD:0771818404
+      - POSTGRES_DB:bionsml
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./docker/postgresql/data:/var/lib/postgresql/data

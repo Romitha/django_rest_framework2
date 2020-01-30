@@ -1,0 +1,33 @@
+# check the list of db in postgres  - 
+\list or \l: list all databases
+\dt: list all tables in the current database
+
+Install Psycopg2 using the pip command
+You need to install Psycopg2 on your machine to use PostgreSQL from Python. This module is available on pypi.org.
+
+Using pip command, you can install Psycopg2 on any operating system including Windows, macOS, Linux, and Unix and Ubuntu. Use the following pip command to install Psycopg2.
+
+pip install psycopg2
+You can also install a specific version using the following command.
+
+pip install psycopg2=2.7.5
+If you are facing pip install error like “connection error:  [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:598)”. You can resolve this error by setting pypi.org and files.pythonhosted.org as trusted hosts. Please try following the pip command to install Psycopg2.
+
+python -m pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org psycopg2
+Verify Psycopg2 installation
+You should get the following messages after running the above command.
+
+Collecting psycopg2
+Downloading psycopg2-2.7.5
+Installing collected packages: psycopg2
+Successfully installed psycopg2-2.7.5
+
+
+----------------------------------------------------------------------------
+
+docker commands to connect with postgres container
+
+$ docker exec -it YOUR_CONTAINER_NAME psql -U postgres -c "CREATE DATABASE YOUR_DB_NAME;"
+$ docker exec -it YOUR_CONTAINER_NAME psql -U postgres -c "CREATE USER YOUR_USER_NAME SUPERUSER PASSWORD 'YOUR_PASSWORD';"
+$ docker exec -it YOUR_CONTAINER_NAME psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE YOUR_DB_NAME TO YOUR_USER_NAME;"
+
